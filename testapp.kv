@@ -1,0 +1,40 @@
+<MenuScreen>:
+    BoxLayout:
+
+        Button:
+            size_hint: (.33, .07)
+            text: 'Окно 1'
+            on_press:
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'settings'
+        Button:
+            text: 'Окно 2'
+            size_hint: (.33, .07)
+        Button:
+            size_hint: (.33, .07)
+            text: 'Окно 3'
+
+<SettingsScreen>:
+    BoxLayout:
+        Button:
+            text: 'Добавить П'
+            on_press:
+                root.manager.current = 'create_habit'
+        Button:
+            text: 'Back to menu'
+            on_press:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'menu'
+<CreateHabitScreen>:
+    BoxLayout:
+        spacing: '25'
+        orientation: 'vertical'
+        Label:
+            text: 'Проверка'
+        Button:
+            text: 'Введите имя П'
+        Button:
+            text: 'Back'
+            on_press:
+                root.manager.transition.direction = 'right'
+                root.manager.current = 'settings'
